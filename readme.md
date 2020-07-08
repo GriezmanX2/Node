@@ -76,7 +76,7 @@
     + Generator
 - Express Web开发框架
 - ES6
-_____________________________________________
+***
 ### Node安装
 1. [Node官网](https://nodejs.org/en/)下载对应版本
 2. 下一步点烂
@@ -96,4 +96,18 @@ _____________________________________________
 ```JS
 let fs = require('fs');    
 ```
-- 读取文件(fs.readFile(文件数据，读取失败时为null,读取文件错误，读取成功时为null,文件编码，常用值为'utf-8'))
+> 读取文件  
+fs.readFile(path[,options],callback)  
+- path: \<string> | \<Buffer> | \<URL> | \<integer>  
+- options: \<Object> | \<string>  
+    + encoding: \<string> | \<null> Default: null
+    + flag: \<string> Default: 'r'
+- callback \<Function>
+    - error: \<error> | \<null>
+    - data: \<String> | \<Buffer> | \<null>
+```JS
+fs.readFile('/etc/passwd', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+```
