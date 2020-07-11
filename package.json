@@ -1,0 +1,24 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "[Node](https://nodejs.org/en/)\r ### 为什么要学习Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GriezmanX2/Node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GriezmanX2/Node/issues"
+  },
+  "homepage": "https://github.com/GriezmanX2/Node#readme",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "moment": "^2.27.0"
+  }
+}

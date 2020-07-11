@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交评论</title>
+</head>
+<body>
+    <form action="/submit" method="get">
+        <legend>提交评论</legend>
+        <p>
+            <label for="name">姓名</label>
+            
+        </p>
+        <p>
+            <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+            <label for="comment">评论内容</label>
+        </p>
+        <p>
+            <textarea type="textarea" name="comment" row="3" resize="no"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="提交">
+        </p>
+    </form>
+</body>
+</html>

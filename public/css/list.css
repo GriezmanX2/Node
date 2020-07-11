@@ -1,0 +1,18 @@
+@charset 'utf8';
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+li{
+    list-style: none;
+    background: #00adffc4;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}

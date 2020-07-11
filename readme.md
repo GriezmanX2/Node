@@ -23,6 +23,7 @@
         * BOM
         * DOM
     + Node中的JS
+        * ***没有BOM和DOM***
         * ES
         * Node为JS提供的一系列服务器操作API
             - 文件读写
@@ -96,18 +97,56 @@
 ```JS
 let fs = require('fs');    
 ```
-> 读取文件  
+##### 读取文件  
 fs.readFile(path[,options],callback)  
 - path: \<string> | \<Buffer> | \<URL> | \<integer>  
 - options: \<Object> | \<string>  
     + encoding: \<string> | \<null> Default: null
     + flag: \<string> Default: 'r'
 - callback \<Function>
-    - error: \<error> | \<null>
-    - data: \<String> | \<Buffer> | \<null>
+    + error: \<error> | \<null>
+    + data: \<String> | \<Buffer> | \<undefined>  
+    文件中实际存储的都是0和1的二进制文件  
+    Buffer中显示的是二进制转化为的十六进制数据，可以通过toString()转为为我们可以识别的字符
 ```JS
 fs.readFile('/etc/passwd', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
 ```
+
+##### 写入文件  
+fs.writeFile(path,content,callback)
+- path \<string> | \<Buffer> | \<URL> | \<integer>  
+- content
+- callback \<Function>
+    + error: \<error> | \<null>
+
+#### http
+
+##### 创建Http服务器
+```JS
+// 引入http模块
+let http = require('http');
+// 创建服务器对象
+let server = http.createServer();
+// 注册request请求时间
+server.on('request',(request,response) => {
+   console.log('收到客户端请求');
+});
+// 绑定端口号，启动服务器
+server.listen(8080,_ => {
+   console.log('服务器已启动，可通过 http://localhost:8080 访问');
+});
+
+```
+
+### Node中的JS
+- ES   
+    + ***没有BOM和DOM***
+- 核心模块（操作核心模块必须通过require引入）
+    + fs(文件操作)
+    + http(服务器操作)
+    + path(路径操作)
+    + os(系统操作)
+- Node中不存在全局作用域
